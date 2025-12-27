@@ -172,7 +172,8 @@ function App() {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
           title="3005 by Childish Gambino"
-          className="spotify-player"></iframe>
+          className="spotify-player"
+          style={{ border: "none" }}></iframe>
       </div>
     </div>
   );

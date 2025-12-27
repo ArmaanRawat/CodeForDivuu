@@ -117,6 +117,7 @@
   border-radius: 20px;
   padding: 1.5rem 1.2rem;
   min-width: 100px;
+  box-sizing: border-box;
   box-shadow: 
     0 8px 24px rgba(139, 69, 19, 0.15),
     0 4px 12px rgba(212, 165, 165, 0.1),
@@ -406,6 +407,7 @@
   box-shadow: 0 8px 24px rgba(212, 165, 165, 0.3),
     0 2px 8px rgba(201, 165, 184, 0.2);
   display: block;
+  box-sizing: border-box;
 }
 
 /* Fade-in Animations */
@@ -440,10 +442,26 @@
   }
 }
 
+/* Tablet Responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .clock-container {
+    gap: 1.25rem;
+  }
+
+  .clock-card {
+    min-width: 90px;
+    padding: 1.3rem 1rem;
+  }
+
+  .clock-number {
+    font-size: clamp(2.2rem, 5vw, 3rem);
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .love-letter {
-    padding: 2rem 1.5rem 10rem;
+    padding: 2rem 1.5rem 12rem; /* Extra padding for Spotify player on mobile */
   }
 
   .hero {
@@ -460,11 +478,13 @@
   }
 
   .clock-emoji-left {
-    left: 2%;
+    left: 1%;
+    display: none; /* Hide on mobile to avoid interference */
   }
 
   .clock-emoji-right {
-    right: 2%;
+    right: 1%;
+    display: none; /* Hide on mobile to avoid interference */
   }
 
   .photo-emoji {
@@ -473,26 +493,51 @@
 
   .clock-section {
     margin-bottom: 4rem;
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 
   .christmas-clock-wrapper {
-    padding: 1.5rem 0.5rem;
+    padding: 1rem 0.5rem;
   }
 
   .clock-container {
-    gap: 1rem;
+    gap: 0.6rem;
     padding: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   .clock-card {
-    min-width: 80px;
-    padding: 1.2rem 0.8rem;
+    min-width: 70px;
+    max-width: 85px;
+    padding: 0.9rem 0.5rem;
+    flex: 0 1 auto;
+  }
+
+  .clock-number {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    margin: 0.35rem 0;
+    line-height: 1.15;
+  }
+
+  .clock-label {
+    font-size: 0.6rem;
+    margin-top: 0.15rem;
+    letter-spacing: 0.12em;
   }
 
   .clock-separator {
-    margin: 0 0.25rem;
-    font-size: 1.5rem;
+    margin: 0 0.15rem;
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
+  }
+
+  .clock-subtitle {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  .clock-ornament {
+    font-size: 0.7rem;
   }
 
   .text-section {
@@ -513,42 +558,81 @@
     width: calc(100vw - 2rem);
     max-width: 100%;
     bottom: 1rem;
-    right: 1rem;
     left: 1rem;
-    margin: 0 auto;
+    right: 1rem;
+    margin: 0;
+    transform: none;
+    z-index: 10;
   }
 
   .spotify-player {
-    height: 152px;
-    width: 100%;
+    height: 152px !important;
+    width: 100% !important;
+    min-height: 152px;
+    max-height: 152px;
+    border-radius: 12px;
   }
 }
 
 @media (max-width: 480px) {
+  .clock-section {
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .christmas-clock-wrapper {
+    padding: 0.75rem 0.25rem;
+  }
+
   .clock-container {
-    gap: 0.75rem;
+    gap: 0.4rem;
+    padding: 0.25rem 0.1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 100%;
   }
 
   .clock-card {
-    min-width: 70px;
-    padding: 1rem 0.6rem;
+    min-width: 60px;
+    max-width: 70px;
+    padding: 0.75rem 0.4rem;
+    flex: 0 1 calc(22% - 0.4rem);
+    box-sizing: border-box;
   }
 
   .clock-number {
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 6vw, 1.8rem);
+    margin: 0.25rem 0;
+    line-height: 1.1;
   }
 
   .clock-label {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
+    margin-top: 0.1rem;
+    letter-spacing: 0.08em;
   }
 
   .clock-separator {
-    font-size: 1.2rem;
-    margin: 0 0.15rem;
+    font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+    margin: 0 0.05rem;
+    align-self: center;
+  }
+
+  .clock-subtitle {
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
   }
 
   .clock-ornament {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+  }
+
+  .clock-ornament-top {
+    top: 0.3rem;
+  }
+
+  .clock-ornament-bottom {
+    bottom: 0.3rem;
   }
 
   .hero-emoji {
@@ -573,10 +657,17 @@
     bottom: 0.75rem;
     left: 0.75rem;
     right: 0.75rem;
+    margin: 0;
+    transform: none;
+    z-index: 10;
   }
 
   .spotify-player {
-    height: 152px;
+    height: 152px !important;
+    width: 100% !important;
+    min-height: 152px;
+    max-height: 152px;
+    border-radius: 12px;
   }
 }
 
