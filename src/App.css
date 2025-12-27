@@ -1,0 +1,593 @@
+.love-letter {
+  min-height: 100vh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 8rem;
+  position: relative;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #d4a5a5;
+  line-height: 1.4;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(212, 165, 165, 0.1);
+}
+
+/* Hero Emojis */
+.hero-emoji {
+  position: absolute;
+  font-size: 1.5rem;
+  pointer-events: none;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(212, 165, 165, 0.3));
+}
+
+.hero-emoji-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.hero-emoji-2 {
+  top: 20%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.hero-emoji-3 {
+  top: 5%;
+  left: 50%;
+  animation-delay: 1s;
+}
+
+.hero-emoji-4 {
+  bottom: 10%;
+  left: 20%;
+  animation-delay: 1.5s;
+}
+
+.hero-emoji-5 {
+  bottom: 15%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+/* Clock Section - Christmas Theme */
+.clock-section {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 3rem 0;
+  position: relative;
+}
+
+/* Clock Emojis */
+.clock-emoji {
+  position: absolute;
+  font-size: 2rem;
+  pointer-events: none;
+  animation: bounce 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 3px 6px rgba(212, 165, 165, 0.4));
+  z-index: 1;
+}
+
+.clock-emoji-left {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation-delay: 0s;
+}
+
+.clock-emoji-right {
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  animation-delay: 1s;
+}
+
+.christmas-clock-wrapper {
+  position: relative;
+  padding: 2rem 1rem;
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.clock-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #fff8f0 100%);
+  border: 2px solid #d4a5a5;
+  border-radius: 20px;
+  padding: 1.5rem 1.2rem;
+  min-width: 100px;
+  box-shadow: 
+    0 8px 24px rgba(139, 69, 19, 0.15),
+    0 4px 12px rgba(212, 165, 165, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.clock-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 32px rgba(139, 69, 19, 0.2),
+    0 6px 16px rgba(212, 165, 165, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  border-color: #c89595;
+}
+
+.clock-ornament {
+  position: absolute;
+  font-size: 0.875rem;
+  color: #d4a5a5;
+  opacity: 0.6;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+.clock-ornament-top {
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-ornament-bottom {
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.clock-ornament:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.clock-ornament:nth-child(4) {
+  animation-delay: 1s;
+}
+
+.clock-number {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 300;
+  color: #8b4513;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  text-shadow: 
+    0 2px 4px rgba(139, 69, 19, 0.2),
+    0 0 20px rgba(212, 165, 165, 0.3);
+  margin: 0.5rem 0;
+  line-height: 1.2;
+}
+
+.clock-label {
+  font-size: 0.75rem;
+  color: #a67c52;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.clock-separator {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: #d4a5a5;
+  font-weight: 300;
+  opacity: 0.5;
+  margin: 0 0.5rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.clock-subtitle {
+  font-size: 1.25rem;
+  color: #8b6f47;
+  font-style: italic;
+  margin-top: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(212, 165, 165, 0.2);
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+    opacity: 1;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-55%) scale(1.15);
+  }
+}
+
+@keyframes floatRotate {
+  0%, 100% {
+    transform: translateY(0) translateX(0) rotate(0deg) scale(1);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-10px) translateX(5px) rotate(5deg) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-15px) translateX(-5px) rotate(-5deg) scale(1.05);
+    opacity: 0.9;
+  }
+  75% {
+    transform: translateY(-5px) translateX(10px) rotate(8deg) scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* Text Section */
+.text-section {
+  margin-bottom: 5rem;
+}
+
+.text-block {
+  margin-bottom: 2.5rem;
+  padding: 0 1rem;
+}
+
+.text-block p {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+  color: #8b7a8a;
+  font-weight: 300;
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Photo Section */
+.photo-section {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.photo {
+  max-width: 100%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(212, 165, 165, 0.25),
+    0 4px 12px rgba(201, 165, 184, 0.15);
+  object-fit: cover;
+  border: 1px solid rgba(232, 165, 165, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+/* Photo Emojis */
+.photo-emoji {
+  position: absolute;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: floatRotate 4s ease-in-out infinite;
+  filter: drop-shadow(0 3px 6px rgba(212, 165, 165, 0.4));
+  z-index: 3;
+}
+
+.photo-emoji-1 {
+  top: 5%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.photo-emoji-2 {
+  top: 10%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+
+.photo-emoji-3 {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  animation-delay: 1s;
+}
+
+.photo-emoji-4 {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  animation-delay: 1.5s;
+}
+
+.photo-emoji-5 {
+  bottom: 15%;
+  left: 12%;
+  animation-delay: 2s;
+}
+
+.photo-emoji-6 {
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 2.5s;
+}
+
+.photo-emoji-7 {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 3s;
+}
+
+.photo-emoji-8 {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 3.5s;
+}
+
+/* Closing Section */
+.closing {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.closing p {
+  font-size: 1.25rem;
+  color: #d4a5a5;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* Spotify Container */
+.spotify-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 300px;
+  max-width: calc(100vw - 3rem);
+  z-index: 10;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.spotify-container:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.spotify-player {
+  width: 100%;
+  height: 352px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(212, 165, 165, 0.3),
+    0 2px 8px rgba(201, 165, 184, 0.2);
+  display: block;
+}
+
+/* Fade-in Animations */
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+.fade-in-delay-1 {
+  animation: fadeIn 1.5s ease-in 0.3s both;
+}
+
+.fade-in-delay-2 {
+  animation: fadeIn 1.5s ease-in 0.6s both;
+}
+
+.fade-in-delay-3 {
+  animation: fadeIn 1.5s ease-in 0.9s both;
+}
+
+.fade-in-delay-4 {
+  animation: fadeIn 1.5s ease-in 1.2s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .love-letter {
+    padding: 2rem 1.5rem 10rem;
+  }
+
+  .hero {
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+  }
+
+  .hero-emoji {
+    font-size: 1.2rem;
+  }
+
+  .clock-emoji {
+    font-size: 1.5rem;
+  }
+
+  .clock-emoji-left {
+    left: 2%;
+  }
+
+  .clock-emoji-right {
+    right: 2%;
+  }
+
+  .photo-emoji {
+    font-size: 1.4rem;
+  }
+
+  .clock-section {
+    margin-bottom: 4rem;
+    padding: 2rem 0;
+  }
+
+  .christmas-clock-wrapper {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .clock-container {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .clock-card {
+    min-width: 80px;
+    padding: 1.2rem 0.8rem;
+  }
+
+  .clock-separator {
+    margin: 0 0.25rem;
+    font-size: 1.5rem;
+  }
+
+  .text-section {
+    margin-bottom: 4rem;
+  }
+
+  .text-block {
+    margin-bottom: 2rem;
+    padding: 0;
+  }
+
+  .photo-section {
+    margin-bottom: 4rem;
+  }
+
+  .spotify-container {
+    position: fixed;
+    width: calc(100vw - 2rem);
+    max-width: 100%;
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    margin: 0 auto;
+  }
+
+  .spotify-player {
+    height: 152px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock-container {
+    gap: 0.75rem;
+  }
+
+  .clock-card {
+    min-width: 70px;
+    padding: 1rem 0.6rem;
+  }
+
+  .clock-number {
+    font-size: 2rem;
+  }
+
+  .clock-label {
+    font-size: 0.65rem;
+  }
+
+  .clock-separator {
+    font-size: 1.2rem;
+    margin: 0 0.15rem;
+  }
+
+  .clock-ornament {
+    font-size: 0.7rem;
+  }
+
+  .hero-emoji {
+    font-size: 1rem;
+  }
+
+  .clock-emoji {
+    font-size: 1.2rem;
+  }
+
+  .clock-emoji-left,
+  .clock-emoji-right {
+    display: none; /* Hide on very small screens to avoid clutter */
+  }
+
+  .photo-emoji {
+    font-size: 1.1rem;
+  }
+
+  .spotify-container {
+    width: calc(100vw - 1.5rem);
+    bottom: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
+  }
+
+  .spotify-player {
+    height: 152px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-delay-1,
+  .fade-in-delay-2,
+  .fade-in-delay-3,
+  .fade-in-delay-4 {
+    animation: none;
+    opacity: 1;
+  }
+}
