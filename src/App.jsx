@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Snowfall from "react-snowfall";
 
 function App() {
   const [time, setTime] = useState({
@@ -41,6 +42,7 @@ function App() {
   return (
     <div className="love-letter">
       {/* Hero Section */}
+      <Snowfall color="pink" snowflakeCount={300}/>
       <section className="hero">
         <div className="hero-emoji hero-emoji-1">✨</div>
         <div className="hero-emoji hero-emoji-2">⭐</div>
