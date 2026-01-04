@@ -163,19 +163,20 @@ function App() {
       </section>
 
       {/* Spotify Embed - Place at bottom corner */}
-      {/* Track: 3005 by Childish Gambino */}
+      {/* Track: Dandelions by Ruth B. */}
       <div className="spotify-container">
         <iframe
-          src="https://open.spotify.com/embed/track/2X6b7zLdIxCejd6GqVcQ9M?utm_source=generator&theme=1"
+          src="https://open.spotify.com/embed/track/2eAvDnpXP5W0cVtiI0PUxV?utm_source=generator"
           width="100%"
           height="352"
           frameBorder="0"
           allowFullScreen
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
-          title="3005 by Childish Gambino"
+          title="Dandelions by Ruth B."
           className="spotify-player"
           style={{ border: "none" }}></iframe>
+          
       </div>
     </div>
   );
